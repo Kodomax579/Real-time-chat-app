@@ -1,0 +1,78 @@
+body {
+    background-color: #031633;
+}
+
+.chatbox {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    width: 90rem;
+    height: 50rem;
+    background-color: rgb(28, 54, 77);
+    display: flex; /* Flexbox verwenden, um die Liste und den Chat nebeneinander anzuordnen */
+}
+
+.KontaktListe {
+    width: 24rem;
+    height: 100%; /* Volle Höhe der chatbox nutzen */
+    overflow-y: auto; /* Vertikales Scrollen aktivieren */
+    display: flex;
+
+}
+
+.KontaktBox {
+    width: 100%; /* Volle Breite der KontaktListe nutzen */
+    height: 4rem;
+    display: flex;
+    flex-direction: row; /* Arrange items vertically */
+    align-items: start;
+   background-color: rgb(221, 221, 221);
+}
+img {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%; /* Bild rund machen */
+    margin-top: 2%;
+    margin-left: 1rem;
+   
+}
+.name{
+    margin: auto;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.NavbarKontakt
+{
+    width: 100%;
+    border-radius: 20px;
+}
+.NavbarProfilbild
+{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.NavbarName{
+    
+    font-weight: bold;
+    font-size: 2rem;
+    
+}
+.TextBarEinteilung{
+    
+    height: 6rem;
+}
+.Chatgröße{
+    
+    height: 39.8rem;
+}
+.Textbar{
+    text-align: center;
+}
+input{
+    width: 45rem;
+    height: 4rem;
+    border-radius: 20px;
+}
+.NachrichtSender{
+    background-color: green;
+}
