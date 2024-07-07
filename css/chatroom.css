@@ -18,6 +18,9 @@ body {
     overflow-y: auto; /* Vertikales Scrollen aktivieren */
     display: flex;
 }
+.KontaktBox:hover{
+    background-color: rgba(85, 84, 84, 0.555);
+}
 
 .KontaktBox {
     width: 100%; /* Volle Breite der KontaktListe nutzen */
@@ -25,7 +28,7 @@ body {
     display: flex;
     flex-direction: row; /* Arrange items vertically */
     align-items: start;
-    background-color: rgb(221, 221, 221);
+    background-color: rgba(240, 238, 238, 0.986);
 }
 img {
     height: 3rem;

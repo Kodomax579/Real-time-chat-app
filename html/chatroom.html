@@ -6,26 +6,30 @@
     <title>Chatten</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/chatroom.css">
-    <script language="javascript" type="text/javascript" src="chatroom.js"></script>
+    <script language="javascript" type="text/javascript" src="/Javascript/chatroom.js"></script>
 </head>
 <body>
   <div class="chatbox">
     <!-- Die Linke Kontaktliste zum Anzeigen aller Kontakte-->
     <div style="flex: 1;">
-      <div class="card KontaktListe">
-        <div class="card KontaktBox" id="KontaktBoxMaren">
+      <div class="card KontaktListe" id="KontaktBox">
+        <div class="card KontaktBox" id="KontaktnameMaren">
             <img src="/Image/DefaultProfilPicture.jpg" alt="Profilbild" >
             <span class="name">Maren</span>
         </div>
-        <div class="card KontaktBox" id="KontaktBoxCarsten">
+        <div class="card KontaktBox" id="KontaktnameCarsten">
           <img src="/Image/DefaultProfilPicture.jpg" alt="Profilbild" >
           <span class="name">Carsten</span>
-      </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Username" aria-label="Username" id="Kontaktname">
+          <button type="button" class="btn btn-dark" onclick="KontaktHinzufuegen()">Hinzufügen</button>
+        </div>
       </div>
     </div>
 
-    <!-- Das Rechte Fenster für den chat der sich öffnen soll-->
-    <div style="flex: 3; display: flex; flex-direction: column;">
+    <!-- Das Rechte Fenster für den Chat der sich öffnen soll-->
+    <div style="flex: 3; display: flex; flex-direction: column;" id="Chat">
       <!-- Der Kontaktname dem man schreibt-->
       <div class="NavbarKontakt" style="background-color: rgba(0, 255, 255, 0.74);">
         <img src="/Image/DefaultProfilPicture.jpg" alt="Profilbild" class="NavbarProfilbild" id="ProfilbildChat">
