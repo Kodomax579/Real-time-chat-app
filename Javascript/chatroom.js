@@ -7,7 +7,7 @@ function KontaktHinzufuegen() {
         // Neue KontaktBox erstellen und zur KontaktListe hinzufügen
         let kontaktListe = document.getElementById("KontaktBox");
         let neueKontaktBox = document.createElement("div");
-        neueKontaktBox.id = "Kontaktname"+input
+        neueKontaktBox.id = "Kontaktname" + input;
         neueKontaktBox.className = "card KontaktBox";
         neueKontaktBox.onclick = function() { ChatAufruf(input); };
         neueKontaktBox.innerHTML = `
@@ -24,39 +24,41 @@ function KontaktHinzufuegen() {
         alert('Bitte geben Sie einen Kontaktname ein.');
     }
 }
-function ChatAufruf(Name)
-{
-    let chat = document.getElementById("Chat")
 
-    let neuerChat = document.createElement("div")
-    neuerChat.innerHTML = `<div class="NavbarKontakt" style="background-color: rgba(0, 255, 255, 0.74);" id="Chat">
+function ChatAufruf(Name) {
+    let chat = document.getElementById("Chat");
+    chat.innerHTML = ""; // Vorherigen Inhalt entfernen
+
+    let neuerChat = document.createElement("div");
+    neuerChat.className = "chat-content"; // Neue Klasse, um Styling zu vereinfachen
+    neuerChat.innerHTML = `
+    <div class="NavbarKontakt">
         <img src="/Image/DefaultProfilPicture.jpg" alt="Profilbild" class="NavbarProfilbild" id="ProfilbildChat">
-        <span class="NavbarName" id="NameChat">Maren</span>
-      </div>
-      <div class="Chatgröße">
+        <span class="NavbarName" id="NameChat">${Name}</span>
+    </div>
+    <div class="Chatgröße">
         <div class="Nachrichtunten">
-          <!-- Nachricht die man gesendet bekommt-->
-          <div class="card EmpfängerNachricht">
-            <div class="card-body">
-              Habe ich Empfangen
+            <!-- Nachricht die man gesendet bekommt -->
+            <div class="card EmpfängerNachricht">
+                <div class="card-body">
+                    Habe ich Empfangen
+                </div>
             </div>
-          </div>
-          <!-- Nachricht die man selbst schreibt-->
-          <div class="card SenderNachricht">
-            <div class="card-body">
-              Habe ich gesendet
+            <!-- Nachricht die man selbst schreibt -->
+            <div class="card SenderNachricht">
+                <div class="card-body">
+                    Habe ich gesendet
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="TextBarEinteilung">
+    </div>
+    <div class="TextBarEinteilung">
         <div class="mb-3 Textbar">
-          <input type="text" id="fname" name="fname"><br><br>
+            <input type="text" id="fname" name="fname"><br><br>
         </div>
-      </div>`
+    </div>
+    
+    `;
 
-      chat.appendChild(neuerChat)
-        
+    chat.appendChild(neuerChat);
 }
-
-
