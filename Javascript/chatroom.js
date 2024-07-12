@@ -61,4 +61,10 @@ function ChatAufruf(Name) {
     `;
 
     chat.appendChild(neuerChat);
+    getmessage()
+}
+
+function getmessage()
+{
+    fetch("http://localhost:3000/daten/von/Carsten")
 }
