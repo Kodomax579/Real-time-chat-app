@@ -1,4 +1,14 @@
 {
-    "user":"Maren",
-    "messages":[{"message": "Carsten ist Cool"}]
+    "userID":1,
+    "messages":[
+        {
+            "sender": 1,
+            "message": "Maren ist Cool"
+        },
+        {
+            "sender":2,
+            "message":"Das stimmt"
+        }
+
+    ]
 }

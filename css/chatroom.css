@@ -57,6 +57,8 @@ img {
 }
 .TextBarEinteilung {
     height: 6rem;
+    display: flex;
+    margin-left: 4rem;
 }
 .Chatgröße {
     flex: 1;
@@ -86,9 +88,13 @@ input {
 .SenderNachricht {
     width: 45rem;
     margin-left: auto;
+    margin-top: 2rem;
 }
 .chat{
     flex: 3; 
     display: flex;
      flex-direction: column;
+}
+.abschicken{
+    height: 4rem;
 }

@@ -1,3 +1,4 @@
+
 function KontaktHinzufuegen() {
     let input = document.getElementById("Kontaktname").value;
     if (input.trim() !== "") {
@@ -35,47 +36,62 @@ function ChatAufruf(Name) {
     <div class="NavbarKontakt">
         <img src="/Image/DefaultProfilPicture.jpg" alt="Profilbild" class="NavbarProfilbild" id="ProfilbildChat">
         <span class="NavbarName" id="NameChat">${Name}</span>
-    </div>
-    <div class="Chatgröße">
-        <div class="Nachrichtunten">
-            <!-- Nachricht die man gesendet bekommt -->
-            <div class="card EmpfängerNachricht">
-                <div class="card-body">
-                    Habe ich Empfangen
-                </div>
+      </div>
+      <div class="Chatgröße">
+          <div class="Nachrichtunten">
+              <!-- Nachricht die man gesendet bekommt -->
+              <div class="card EmpfängerNachricht" id="Empfangen">
+                  <div class="card-body Nachricht">
+                      Habe ich Empfangen
+                  </div>
+              </div>
+              <!-- Nachricht die man selbst schreibt -->
+              <div id="Geschrieben">
             </div>
-            <!-- Nachricht die man selbst schreibt -->
-            <div class="card SenderNachricht">
-                <div class="card-body">
-                    Habe ich gesendet
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="TextBarEinteilung">
-        <div class="mb-3 Textbar">
-            <input type="text" id="fname" name="fname"><br><br>
-        </div>
-    </div>
+          </div>
+      </div>
+      <div class="TextBarEinteilung">
+          <div class="mb-3 Textbar">
+              <input type="text" id="fname" name="fname"><br><br>
+          </div>
+          <div>
+            <button type="button" class="btn btn-primary abschicken" id="absenden" onclick="senden()">Absenden</button>
+          </div>
+      </div>
     
-    `;
+    `
 
     chat.appendChild(neuerChat);
-    getmessage()
+    ChatAufrufen()
+    let input = document.getElementById("fname")
+        input.addEventListener("keypress",function(event){
+        if(event.key ==="Enter")
+        {
+            senden();
+        }
+        })
+}
+function senden()
+{
+    let text = document.getElementById("fname").value
+
+    let Nachricht = document.createElement("div");
+    Nachricht.className = "card SenderNachricht"
+    Nachricht.innerHTML = `
+        <div class="card-body ">
+            ${text}
+        </div>
+    `
+    document.getElementById("Geschrieben").appendChild(Nachricht) 
+
+    document.getElementById("fname").value = ``
 }
 
-function getmessage() {
-    fetch("http://localhost:3000/daten/von/Carsten")
-    .then((response) => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then((data) => {
-        console.log(data);
-    })
-    .catch((error) => {
-        console.error('There has been a problem with your fetch operation:', error);
-    });
+function ChatAufrufen() 
+{
+    fetch("../datenbank/messages/CarstensChat.json")
+    .then(response => response.text())
+    .then(data =>{
+        console.log(data)
+    }) 
 }
