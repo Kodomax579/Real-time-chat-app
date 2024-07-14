@@ -1,14 +1,14 @@
-const path = require("path")
 const express = require("express")
-let fs = require('fs')
 const app = express()
-
-let usersFilePath = path.join(__dirname, '../datenbank/messages/CarstensChat.json');
-
+const cors = require('cors')
+const path = require("path")
+app.use(cors())
 app.get("/daten/von/Carsten",(req,res) => {
     
-    var readable = fs.createReadStream(usersFilePath);
-    readable.pipe(res);
+    const absolutePath = path.join(__dirname, '../datenbank/messages/CarstensChat.json');
+    console.log(absolutePath)
+    res.sendFile(absolutePath);
+
 })
 app.listen(3000)
 console.log("Server listening on port 3000")
